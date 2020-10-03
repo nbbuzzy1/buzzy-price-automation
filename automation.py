@@ -16,7 +16,6 @@ def buzzy_price_automation():
 	time.sleep(20)
 	buzzy_price_page_interaction(chrome_browser)
 	chrome_browser.close()
-	print('successful automation')
 
 
 def buzzy_price_page_interaction(chrome_browser):
@@ -38,7 +37,11 @@ def google_page_interaction(chrome_browser):
 	buzzy_price_link.click()
 
 
+successful_automations = 0
+
 while True:
 	buzzy_price_automation()
+	successful_automations += 1
+	print('successful automation', successful_automations)
 	time.sleep(10800)
 
