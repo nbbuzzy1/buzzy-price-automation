@@ -9,11 +9,12 @@ options.add_argument("--headless")
 def buzzy_price_automation():
 	chrome_browser = webdriver.Chrome('./chromedriver.exe', options=options)
 	chrome_browser.get('https://buzzyprice.com')
-	time.sleep(20)
+	time.sleep(95)
 	buzzy_price_page_interaction(chrome_browser)
 	chrome_browser.get('https://google.com')
+	time.sleep(35)
 	google_page_interaction(chrome_browser)
-	time.sleep(20)
+	time.sleep(95)
 	buzzy_price_page_interaction(chrome_browser)
 	chrome_browser.close()
 
@@ -22,14 +23,14 @@ def buzzy_price_page_interaction(chrome_browser):
 	auction_item_input = chrome_browser.find_element_by_id('auctionLink')
 	auction_item_url = 'https://www.ebay.com/itm/Playstation-5-Disc-Version-PS5/293764734938?hash=item4465be1fda:g:r3kAAOSwkplfa9Tn'
 	auction_item_input.send_keys(auction_item_url)
-	time.sleep(20)
-	auction_item_input.send_keys(Keys.ENTER)
 	time.sleep(75)
+	auction_item_input.send_keys(Keys.ENTER)
+	time.sleep(95)
 
 
 def google_page_interaction(chrome_browser):
 	google_search_input = chrome_browser.find_element_by_class_name('gLFyf')
-	google_search_input.send_keys('buzzyprice ebay alert')
+	google_search_input.send_keys('buzzy price ebay alert')
 	google_search_input.send_keys(Keys.ENTER)
 	time.sleep(35)
 	buzzy_price_url = 'https://www.buzzyprice.com/'
